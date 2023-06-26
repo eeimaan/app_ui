@@ -1,6 +1,6 @@
-import 'package:app_ui/Components/customappbar.dart';
-import 'package:app_ui/Screens/goal_page.dart';
-import 'package:app_ui/Screens/welcomepage.dart';
+import '../Components/components.dart';
+import 'screens.dart';
+
 import 'package:flutter/material.dart';
 
 class namegender extends StatefulWidget {

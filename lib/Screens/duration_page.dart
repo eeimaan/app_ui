@@ -1,7 +1,6 @@
-import 'package:app_ui/Components/customappbar.dart';
-import 'package:app_ui/Components/optionsfield.dart';
-import 'package:app_ui/Screens/exercise_page.dart';
-import 'package:app_ui/Screens/welcomepage.dart';
+import '../Components/components.dart';
+import 'screens.dart';
+
 import 'package:flutter/material.dart';
 
 class durationset extends StatefulWidget {
@@ -12,7 +11,7 @@ class durationset extends StatefulWidget {
 }
 
 class _durationsetState extends State<durationset> {
-   static const routeName = '/duration';
+  static const routeName = '/duration';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,11 +29,11 @@ class _durationsetState extends State<durationset> {
           QuestionWithOptions(
             question: 'Typical length of workout?',
             options: const ['0-30 min', '30-60 min', '60 min - 1 hour'],
-             classIndex: 2,
+            classIndex: 2,
           ),
           const SizedBox(height: 190),
           Padding(
-             padding: const EdgeInsets.symmetric(horizontal: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: CustomButton(
               buttonText: 'Next',
               onPressed: () {

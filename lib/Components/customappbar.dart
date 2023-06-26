@@ -33,11 +33,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 Container buildDot(int index) {
   List<Color> dotColors = [
-    Colors.red,
+    Colors.redAccent,
     Colors.blue,
     Colors.yellow,
     Colors.purple,
-    Colors.red,
+    Colors.redAccent,
   ];
 
   return Container(

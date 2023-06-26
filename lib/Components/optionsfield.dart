@@ -28,7 +28,7 @@ class _QuestionWithOptionsState extends State<QuestionWithOptions> {
   Color getColorForIndex(int index) {
     switch (index) {
       case 0:
-        return Colors.red;
+        return Colors.redAccent;
       case 1:
         return Colors.blue;
       case 2:
@@ -36,7 +36,7 @@ class _QuestionWithOptionsState extends State<QuestionWithOptions> {
       case 3:
         return Colors.purple;
       case 4:
-        return Colors.red;
+        return Colors.redAccent;
       default:
         return Colors.transparent;
     }

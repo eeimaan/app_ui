@@ -1,7 +1,6 @@
-import 'package:app_ui/Components/customappbar.dart';
-import 'package:app_ui/Components/optionsfield.dart';
-import 'package:app_ui/Screens/diets.dart';
-import 'package:app_ui/Screens/welcomepage.dart';
+import '../Components/components.dart';
+import 'screens.dart';
+
 import 'package:flutter/material.dart';
 
 class exercise extends StatefulWidget {
@@ -29,17 +28,14 @@ const QuestionWithOptions(
 
 
           const SizedBox(height: 230),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Padding(
-             padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: CustomButton(
-                buttonText: 'Next',
-                onPressed: () {
-                 Navigator.pushNamed(context, '/diet');
-                },
-                buttonColor: Colors.purple,
-              ),
+          Padding(
+           padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: CustomButton(
+              buttonText: 'Next',
+              onPressed: () {
+               Navigator.pushNamed(context, '/diet');
+              },
+              buttonColor: Colors.purple,
             ),
           ),
         ],

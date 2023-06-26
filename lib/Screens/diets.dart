@@ -1,7 +1,7 @@
-import 'package:app_ui/Components/customappbar.dart';
-import 'package:app_ui/Components/optionsfield.dart';
-import 'package:app_ui/Screens/welcomepage.dart';
+
 import 'package:flutter/material.dart';
+import '../Components/components.dart';
+import 'welcomepage.dart';
 
 class dietset extends StatefulWidget {
   const dietset({super.key});
@@ -31,7 +31,7 @@ class _dietsetState extends State<dietset> {
             child: CustomButton(
               buttonText: 'Next',
               onPressed: () {
-               Navigator.pushNamed(context, '/diet');
+               Navigator.pushNamed(context, '/savedatawidget');
               },
               buttonColor: Colors.red,
             ),
