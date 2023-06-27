@@ -2,14 +2,10 @@ import 'package:app_ui/Screens/Content_page.dart';
 import 'package:app_ui/Screens/CreateAccountpage.dart';
 import 'package:app_ui/Screens/LoginScreen.dart';
 import 'package:app_ui/Screens/SaveDataPage.dart';
-import 'package:app_ui/Screens/diets.dart';
-import 'package:app_ui/Screens/duration_page.dart';
-import 'package:app_ui/Screens/goal_page.dart';
-import 'package:app_ui/Screens/name_gender.dart';
-import 'package:app_ui/Screens/start_page.dart';
-import 'package:app_ui/Screens/welcomepage.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+
+import 'Screens/screens.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +24,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark, // Set the brightness to dark
         useMaterial3: true,
       ),
-      home: StartPage(),
+      home:ContentPage (),
       onGenerateRoute: (settings) {
         switch (settings.name) {
            case '/startpage':
@@ -85,6 +81,21 @@ class MyApp extends StatelessWidget {
             case '/contentpage':
             return PageTransition(
               child: const ContentPage(),
+              type: PageTransitionType.leftToRight,
+            );
+             case '/showprofile':
+            return PageTransition(
+              child: const ShowProfile(),
+              type: PageTransitionType.leftToRight,
+            );
+             case '/profilesettings':
+            return PageTransition(
+              child: const ProfileSettings(),
+              type: PageTransitionType.leftToRight,
+            );
+             case '/personaldetails':
+            return PageTransition(
+              child: const PersonalDetails(),
               type: PageTransitionType.leftToRight,
             );
           default:
