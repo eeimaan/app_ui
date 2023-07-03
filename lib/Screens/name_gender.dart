@@ -15,19 +15,17 @@ class _namegenderState extends State<namegender> {
   late String selectedGender;
   int currentIndex = 0;
 
-  @override
+   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(currentIndex: 0),
-      body: Column(
+      body: SingleChildScrollView(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SingleChildScrollView(child: _buildInputField('What\'s your name?', hintText: 'name')),
-          //  const SizedBox(height: 10),
-            SingleChildScrollView(child: _buildInputField('How old you are?', hintText: 'age')),
-            //const SizedBox(height: 10),
-            // _buildInputField('What\'s your gender?', hintText: ''),
+            _buildInputField('What\'s your name?', hintText: 'name'),
+            _buildInputField('How old are you?', hintText: 'age'),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Text(
@@ -65,9 +63,8 @@ class _namegenderState extends State<namegender> {
               ),
             ),
             const SizedBox(height: 10),
-            SingleChildScrollView(child: _buildInputField('Height', hintText: 'height')),
-           // const SizedBox(height: 10),
-            SingleChildScrollView(child: _buildInputField('Weight', hintText: 'current weight')),
+            _buildInputField('Height', hintText: 'height'),
+            _buildInputField('Weight', hintText: 'current weight'),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextField(
@@ -82,21 +79,20 @@ class _namegenderState extends State<namegender> {
                 ),
               ),
             ),
-            //const SizedBox(height: 40),
             Padding(
-               padding: const EdgeInsets.symmetric(horizontal: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Center(
                 child: CustomButton(
                   buttonText: 'Next',
                   onPressed: () {
-                   Navigator.pushNamed(context, '/goal');
+                    Navigator.pushNamed(context, '/goal');
                   },
                 ),
               ),
             ),
-
-            // _buildInputField('', hintText: 'target weight'),
-          ]),
+          ],
+        ),
+      ),
     );
   }
 }

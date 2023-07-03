@@ -16,27 +16,29 @@ class _dietsetState extends State<dietset> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(currentIndex: 4), // Use the CustomAppBar here
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          QuestionWithOptions(
-            question: 'Do you follow amny of these diets?',
-            options: const ['Ketogenic diet', 'Veganism', 'Paleolithic diet','Gluten-free diet','Healthy diet'],
-            classIndex: 4,
-          ),
-          const SizedBox(height: 270),
-          Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: CustomButton(
-              buttonText: 'Next',
-              onPressed: () {
-               Navigator.pushNamed(context, '/savedatawidget');
-              },
-              buttonColor: Colors.red,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            QuestionWithOptions(
+              question: 'Do you follow amny of these diets?',
+              options: const ['Ketogenic diet', 'Veganism', 'Paleolithic diet','Gluten-free diet','Healthy diet'],
+              classIndex: 4,
             ),
-          ),
-        ],
+            const SizedBox(height: 270),
+            Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: CustomButton(
+                buttonText: 'Next',
+                onPressed: () {
+                 Navigator.pushNamed(context, '/savedatawidget');
+                },
+                buttonColor: Colors.red,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -6,7 +6,7 @@ import 'screens.dart';
 class CreateAccountpage extends StatelessWidget {
    static const routeName = '/createaccount';
   const CreateAccountpage({super.key});
-  @override
+ @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -18,12 +18,12 @@ class CreateAccountpage extends StatelessWidget {
         ),
         title: Text('Welcome to Krause!'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(top: 100),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+      body: ListView(
+        padding: const EdgeInsets.symmetric(vertical: 100),
+        children: [
+          Center(
+            child: Wrap(
+              alignment: WrapAlignment.center,
               children: [
                 _buildLogo('images/apple.png'),
                 SizedBox(width: 20),
@@ -32,17 +32,17 @@ class CreateAccountpage extends StatelessWidget {
                 _buildLogo('images/facebook.png'),
               ],
             ),
-            SizedBox(height: 20),
-            Row(
+          ),
+          SizedBox(height: 20),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Divider(
-                      color: Colors.redAccent,
-                      height: 1,
-                    ),
+                  child: Divider(
+                    color: Colors.redAccent,
+                    height: 1,
                   ),
                 ),
                 Container(
@@ -56,61 +56,64 @@ class CreateAccountpage extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Divider(
-                      color: Colors.redAccent,
-                      height: 1,
-                    ),
+                  child: Divider(
+                    color: Colors.redAccent,
+                    height: 1,
                   ),
                 ),
               ],
             ),
-            SingleChildScrollView(child: _buildTextField(hintText: 'Email')),
-            //  const SizedBox(height: 10),
-            SingleChildScrollView(child: _buildTextField(hintText: 'Password')),
-            const SizedBox(height: 120),
-
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: CustomButton(
-                buttonText: 'Create an Account',
-                onPressed: () {
-                   Navigator.pushNamed(context, '/welcome');
-                },
-              ),
+          ),
+          SizedBox(height: 20),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              children: [
+                _buildTextField(hintText: 'Email'),
+                SizedBox(height: 10),
+                _buildTextField(hintText: 'Password'),
+              ],
             ),
-            SizedBox(height: 10,),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Center(
-                child: RichText(
-                  text: TextSpan(
-                    style: TextStyle(
-                      fontSize: 16,
-                    ),
-                    children: [
-                      TextSpan(
-                        text: 'By creating an account you agree to ',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      TextSpan(
-                        text: 'Terms of use and privacy policy',
-                        style: TextStyle(
-                          color: Colors.redAccent,
-                          decoration: TextDecoration
-                              .underline, // Add underline decoration
-                        ),
-                      ),
-                    ],
+          ),
+          const SizedBox(height: 100),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: CustomButton(
+              buttonText: 'Create an Account',
+              onPressed: () {
+                Navigator.pushNamed(context, '/welcome');
+              },
+            ),
+          ),
+          SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Center(
+              child: RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                    fontSize: 16,
                   ),
+                  children: [
+                    TextSpan(
+                      text: 'By creating an account you agree to ',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'Terms of use and privacy policy',
+                      style: TextStyle(
+                        color: Colors.redAccent,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

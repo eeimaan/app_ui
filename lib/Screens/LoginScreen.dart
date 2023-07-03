@@ -4,8 +4,7 @@ import '../Components/components.dart';
 import 'screens.dart';
 class LoginScreen extends StatelessWidget {
    static const routeName = '/loginscreen';
-  const LoginScreen({super.key});
- @override
+  const LoginScreen({super.key}); @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -17,12 +16,12 @@ class LoginScreen extends StatelessWidget {
         ),
         title: const Center(child: Text('Welcome to Krause!')),
       ),
-      body: Padding(
+      body: ListView(
         padding: const EdgeInsets.only(top: 140),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Wrap(
+              alignment: WrapAlignment.center,
               children: [
                 _buildLogo('images/apple.png'),
                 SizedBox(width: 20),
@@ -31,17 +30,17 @@ class LoginScreen extends StatelessWidget {
                 _buildLogo('images/facebook.png'),
               ],
             ),
-            SizedBox(height: 10),
-            Row(
+          ),
+          SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Divider(
-                      color: Colors.redAccent,
-                      height: 1,
-                    ),
+                  child: Divider(
+                    color: Colors.redAccent,
+                    height: 1,
                   ),
                 ),
                 Container(
@@ -55,32 +54,27 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Divider(
-                      color: Colors.redAccent,
-                      height: 1,
-                    ),
+                  child: Divider(
+                    color: Colors.redAccent,
+                    height: 1,
                   ),
                 ),
               ],
             ),
-            SingleChildScrollView(child: _buildTextField(hintText: 'Email')),
-            //  const SizedBox(height: 10),
-           SingleChildScrollView(child: _buildTextField(hintText: 'Password')),
-            const SizedBox(height: 100),
-
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: CustomButton(
-                buttonText: 'Log In',
-                onPressed: () {
-                   Navigator.pushNamed(context, '/welcome');
-                },
-              ),
+          ),
+          SingleChildScrollView(child: _buildTextField(hintText: 'Email')),
+          SingleChildScrollView(child: _buildTextField(hintText: 'Password')),
+          const SizedBox(height: 100),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: CustomButton(
+              buttonText: 'Log In',
+              onPressed: () {
+                Navigator.pushNamed(context, '/welcome');
+              },
             ),
-             ],
-        ),
+          ),
+        ],
       ),
     );
   }

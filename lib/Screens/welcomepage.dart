@@ -12,39 +12,45 @@ class welcomepage extends StatefulWidget {
 
 class _welcomepageState extends State<welcomepage> {
   static const routeName = '/welcome';
-  @override
+ @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SvgPicture.asset(
-              'images/welcome.svg', // Replace 'your_image.svg' with your actual SVG image path
-              height: 200,
-            ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: const Text(
-                'We will help you achieve your goals by asking you some questions.',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: MediaQuery.of(context).size.height * 0.6,
+                child: SvgPicture.asset(
+                  'images/welcome.svg', 
+                  height: 200,
                 ),
               ),
-            ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: CustomButton(
-                buttonText: 'Go',
-                onPressed: () {
-                  Navigator.pushNamed(context, '/name');
-                },
+              const SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: const Text(
+                  'We will help you achieve your goals by asking you some questions.',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
               ),
-            ),
-          ],
+              const SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: CustomButton(
+                  buttonText: 'Go',
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/name');
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

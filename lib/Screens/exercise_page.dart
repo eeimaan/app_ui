@@ -16,29 +16,31 @@ class _exerciseState extends State<exercise> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(currentIndex: 3), // Use the CustomAppBar here
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-const QuestionWithOptions(
-            question: 'What do you prefer?',
-            options: ['Balance', 'Cardo', 'Runing','Streching','Pull-up','Crunch'],
-             classIndex: 3,
-          ),
-
-
-          const SizedBox(height: 230),
-          Padding(
-           padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: CustomButton(
-              buttonText: 'Next',
-              onPressed: () {
-               Navigator.pushNamed(context, '/diet');
-              },
-              buttonColor: Colors.purple,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+      const QuestionWithOptions(
+              question: 'What do you prefer?',
+              options: ['Balance', 'Cardo', 'Runing','Streching','Pull-up','Crunch'],
+               classIndex: 3,
             ),
-          ),
-        ],
+      
+      
+            const SizedBox(height: 230),
+            Padding(
+             padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: CustomButton(
+                buttonText: 'Next',
+                onPressed: () {
+                 Navigator.pushNamed(context, '/diet');
+                },
+                buttonColor: Colors.purple,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -19,8 +19,7 @@ class StartPage extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Expanded(
-              // Wrap the Column with Expanded
+            Flexible(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -46,18 +45,18 @@ class StartPage extends StatelessWidget {
                             text: 'Already have an account?',
                             style: TextStyle(
                               color: Colors
-                                  .white, // White color for the first part
+                                  .white, 
                             ),
                           ),
                           TextSpan(
                             text: ' Log In',
                             style: TextStyle(
-                              color: Colors.redAccent, // Red color for "Log In"
+                              color: Colors.redAccent, 
                             ),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
                                 Navigator.pushNamed(context, '/loginscreen');
-
+            
                                 print('Log In tapped!');
                               },
                           ),

@@ -11,17 +11,19 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'UI demo',
       theme: ThemeData(
-        brightness: Brightness.dark, // Set the brightness to dark
+        brightness: Brightness.dark, 
         useMaterial3: true,
       ),
-      home: namegender(),
+      home: StartPage(),
+  
+
       onGenerateRoute: (settings) {
         switch (settings.name) {
            case '/startpage':
@@ -44,7 +46,7 @@ class MyApp extends StatelessWidget {
               child: const welcomepage(),
               type: PageTransitionType.leftToRight,
             );
-            //return MaterialPageRoute(builder: (context) => const welcomepage());
+            
           case '/name':
             return PageTransition(
               child: const namegender(),
@@ -62,7 +64,7 @@ class MyApp extends StatelessWidget {
             );
           case '/exercise':
             return PageTransition(
-              child: const namegender(),
+              child: const exercise(),
               type: PageTransitionType.leftToRight,
             );
           case '/diet':
@@ -93,6 +95,21 @@ class MyApp extends StatelessWidget {
              case '/personaldetails':
             return PageTransition(
               child: const PersonalDetails(),
+              type: PageTransitionType.leftToRight,
+            );
+             case '/workout':
+            return PageTransition(
+              child: const WorkoutPage(),
+              type: PageTransitionType.leftToRight,
+            );
+            case '/nutration':
+            return PageTransition(
+              child: const NutrationPage(),
+              type: PageTransitionType.leftToRight,
+            );
+             case '/diary':
+            return PageTransition(
+              child: const DiaryPage(),
               type: PageTransitionType.leftToRight,
             );
           default:
