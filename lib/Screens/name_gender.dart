@@ -23,9 +23,9 @@ class _namegenderState extends State<namegender> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildInputField('What\'s your name?', hintText: 'name'),
+            SingleChildScrollView(child: _buildInputField('What\'s your name?', hintText: 'name')),
           //  const SizedBox(height: 10),
-            _buildInputField('How old you are?', hintText: 'age'),
+            SingleChildScrollView(child: _buildInputField('How old you are?', hintText: 'age')),
             //const SizedBox(height: 10),
             // _buildInputField('What\'s your gender?', hintText: ''),
             const Padding(
@@ -65,9 +65,9 @@ class _namegenderState extends State<namegender> {
               ),
             ),
             const SizedBox(height: 10),
-            _buildInputField('Height', hintText: 'height'),
+            SingleChildScrollView(child: _buildInputField('Height', hintText: 'height')),
            // const SizedBox(height: 10),
-            _buildInputField('Weight', hintText: 'current weight'),
+            SingleChildScrollView(child: _buildInputField('Weight', hintText: 'current weight')),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextField(

@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
 
 class ShowProfile extends StatelessWidget {
+ 
   static const routeName = '/showprofile';
-  const ShowProfile({super.key});
+   ShowProfile({super.key});
+   int _currentIndex = 3;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+         leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         title:  Center(
           child: Text(
                 'Profile',
                 style: TextStyle(
-                  fontSize: 24,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
@@ -31,13 +39,15 @@ class ShowProfile extends StatelessWidget {
                 width: 2,
               ),
             ),
-            child: CircleAvatar(
-              radius: 80,
-              backgroundImage: AssetImage('images/CircularAvater.jpg'),
+            child: Center(
+              child: CircleAvatar(
+                radius: 40,
+                backgroundImage: AssetImage('images/CircularAvater.jpg'),
+              ),
             ),
           ),
         ),
-          SizedBox(height: 20),
+          SizedBox(height: 10),
           ElevatedButton(
             onPressed: () {
               
@@ -46,31 +56,31 @@ class ShowProfile extends StatelessWidget {
             },
             child: Text('Edit Profile'),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 10),
           ListTile(
             title: Text(
               'Notifications',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white , fontSize: 16),
             ),
             trailing: Switch(
               value: true, // Replace with your actual switch value
               onChanged: (value) {
                 // Handle switch value change
               },
-              activeColor: Colors.white, // Set the active color to red
+              activeColor: Colors.white, 
               inactiveThumbColor:
-                  Colors.redAccent, // Set the inactive thumb color to white
+                  Colors.redAccent, 
              activeTrackColor: Colors.red.withOpacity(
-                0.5), // Optional: Adjust the active track color opacity
+                0.5), 
               inactiveTrackColor: Colors.white.withOpacity(
-                  0.5), // Optional: Adjust the inactive track color opacity
+                  0.5), 
             ),
           ),
-          Divider(color: Colors.white),
+          Divider(color: Colors.grey),
           ListTile(
             title: Text(
               'Settings',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white, fontSize: 16),
             ),
             trailing: Icon(
               Icons.arrow_forward_ios,
@@ -80,42 +90,43 @@ class ShowProfile extends StatelessWidget {
                Navigator.pushNamed(context, '/profilesettings');
             },
           ),
-          Divider(color: Colors.white),
+          Divider(color: Colors.grey),
           ListTile(
             title: Text(
               'Subscription and Payments',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white, fontSize: 16),
             ),
             trailing: Icon(
               Icons.arrow_forward_ios,
               color: Colors.white,
             ),
           ),
-          Divider(color: Colors.white),
+          Divider(color: Colors.grey),
           ListTile(
             title: Text(
               'Support',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white, fontSize: 16),
             ),
             trailing: Icon(
               Icons.arrow_forward_ios,
               color: Colors.white,
             ),
           ),
-          Divider(color: Colors.white),
+          Divider(color: Colors.grey),
           ListTile(
             title: Text(
               'Log Out',
               style: TextStyle(
                 color: Colors.red,
                 fontWeight: FontWeight.bold,
+                 fontSize: 16,
               ),
             ),
             onTap: (){
                Navigator.pushNamed(context, '/startpage');
             },
           ),
-          Divider(color: Colors.white),
+          Divider(color: Colors.grey),
         ],
       ),
     );

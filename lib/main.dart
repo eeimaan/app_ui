@@ -1,7 +1,4 @@
-import 'package:app_ui/Screens/Content_page.dart';
-import 'package:app_ui/Screens/CreateAccountpage.dart';
-import 'package:app_ui/Screens/LoginScreen.dart';
-import 'package:app_ui/Screens/SaveDataPage.dart';
+
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -24,7 +21,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark, // Set the brightness to dark
         useMaterial3: true,
       ),
-      home:ContentPage (),
+      home: namegender(),
       onGenerateRoute: (settings) {
         switch (settings.name) {
            case '/startpage':
@@ -80,12 +77,12 @@ class MyApp extends StatelessWidget {
             );
             case '/contentpage':
             return PageTransition(
-              child: const ContentPage(),
+              child: const HomePage(),
               type: PageTransitionType.leftToRight,
             );
              case '/showprofile':
             return PageTransition(
-              child: const ShowProfile(),
+              child:  ShowProfile(),
               type: PageTransitionType.leftToRight,
             );
              case '/profilesettings':
