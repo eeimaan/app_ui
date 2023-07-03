@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark, // Set the brightness to dark
         useMaterial3: true,
       ),
-      home: namegender(),
+      home: StartPage(),
       onGenerateRoute: (settings) {
         switch (settings.name) {
            case '/startpage':
