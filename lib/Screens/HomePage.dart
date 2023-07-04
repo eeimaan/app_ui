@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
+import '../Components/components.dart';
 import 'screens.dart';
 
 class HomePage extends StatefulWidget {
@@ -576,39 +576,16 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
+          
+       
         ],
       ),
 
-      
-       bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: CustomBottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: _onTabTapped,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white,
-        backgroundColor: Colors.grey,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.house),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.fitness_center_rounded),
-            label: 'Exercise',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.book),
-            label: 'Diary',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.utensils),
-            label: 'Nutrition',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.user),
-            label: 'Profile',
-          ),
-        ],
       ),
+      
     );
   }
 }
