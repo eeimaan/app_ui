@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:percent_indicator/percent_indicator.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
 import '../Components/components.dart';
 import 'screens.dart';
@@ -17,39 +17,37 @@ class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
 
   final List<Widget> _screens = [
-     HomePage(),
+    HomePage(),
     WorkoutPage(),
     DiaryPage(),
     NutrationPage(),
     ShowProfile(),
   ];
 
- void _onTabTapped(int index) {
-  setState(() {
-    _currentIndex = index;
-  });
+  void _onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
 
-  switch (index) {
-    case 0:
-      Navigator.pushNamed(context, '/contentpage');
-      break;
-    case 1:
-      Navigator.pushNamed(context, '/workout');
-      break;
-    case 2:
-      Navigator.pushNamed(context, '/diary');
-      break;
-    case 3:
-      Navigator.pushNamed(context, '/nutration');
-      break;
-    case 4:
-       Navigator.pushNamed(context, '/showprofile');
-      break;
+    switch (index) {
+      case 0:
+        Navigator.pushNamed(context, '/contentpage');
+        break;
+      case 1:
+        Navigator.pushNamed(context, '/workout');
+        break;
+      case 2:
+        Navigator.pushNamed(context, '/diary');
+        break;
+      case 3:
+        Navigator.pushNamed(context, '/nutration');
+        break;
+      case 4:
+        Navigator.pushNamed(context, '/showprofile');
+        break;
+    }
   }
 
- }
-  
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +73,7 @@ class _HomePageState extends State<HomePage> {
           SizedBox(width: 20),
         ],
       ),
-      body: Column(
+      body: ListView(
         children: [
           Padding(
             padding: const EdgeInsets.all(5),
@@ -576,16 +574,118 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          
-       
+          Column(
+            children: [
+              Row(
+                children: [
+                  Text(
+                    ' Feature Workout',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 150,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          CustomContainer(
+                            imagePath: 'images/Startbg.png',
+                            containerText: 'Container 1',
+                          ),
+                          CustomContainer(
+                            imagePath: 'images/Startbg.png',
+                            containerText: 'Container 2',
+                          ),
+                          CustomContainer(
+                            imagePath: 'images/Startbg.png',
+                            containerText: 'Container 3',
+                          ),
+                          CustomContainer(
+                            imagePath: 'images/Startbg.png',
+                            containerText: 'Container 4',
+                          ),
+                          CustomContainer(
+                            imagePath: 'images/Startbg.png',
+                            containerText: 'Container 5',
+                          ),
+                          CustomContainer(
+                            imagePath: 'images/Startbg.png',
+                            containerText: 'Container 6',
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          Column(
+            children: [
+              Row(
+                children: [
+                  Text(
+                    ' Feature Recipes',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 150,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          CustomContainer(
+                            imagePath: 'images/Startbg.png',
+                            containerText: 'Container 1',
+                          ),
+                          CustomContainer(
+                            imagePath: 'images/Startbg.png',
+                            containerText: 'Container 2',
+                          ),
+                          CustomContainer(
+                            imagePath: 'images/Startbg.png',
+                            containerText: 'Container 3',
+                          ),
+                          CustomContainer(
+                            imagePath: 'images/Startbg.png',
+                            containerText: 'Container 4',
+                          ),
+                          CustomContainer(
+                            imagePath: 'images/Startbg.png',
+                            containerText: 'Container 5',
+                          ),
+                          CustomContainer(
+                            imagePath: 'images/Startbg.png',
+                            containerText: 'Container 6',
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ],
       ),
-
       bottomNavigationBar: CustomBottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: _onTabTapped,
       ),
-      
     );
   }
 }
